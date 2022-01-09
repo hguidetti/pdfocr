@@ -6,7 +6,7 @@ services:
     image: pdfocr
     volumes:
       - "P:/Documents/Données/Scan à traiter:/input"
-      - "P:/Documents/Données/temp:/output"
+      - "P:/Documents/Données/2022:/output"
     environment:
       - OCR_OUTPUT_DIRECTORY_YEAR_MONTH=0
       - OCR_ON_SUCCESS_DELETE=1

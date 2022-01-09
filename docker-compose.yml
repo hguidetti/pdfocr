@@ -1,0 +1,18 @@
+version: "3.3"
+services:
+  ocrmypdf:
+    restart: always
+    container_name: pdfocr
+    image: pdfocr
+    volumes:
+      - "P:/Documents/Données/Scan à traiter:/input"
+      - "P:/Documents/Données/temp:/output"
+    environment:
+      - OCR_OUTPUT_DIRECTORY_YEAR_MONTH=0
+      - OCR_ON_SUCCESS_DELETE=1
+      - OCR_DESKEW=1
+      - PYTHONBUFFERED=1
+      - OCR_LOGLEVEL=DEBUG
+      - OCR_POLL_NEW_FILE_SECONDS=30
+    entrypoint: python3
+    command: watcher.py
